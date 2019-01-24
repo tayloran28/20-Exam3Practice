@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Alyssa Taylor.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -125,6 +125,24 @@ def run_test_practice_problem3():
     # -------------------------------------------------------------------------
     st.SimpleTestCase.run_tests('practice_problem3', tests)
 
+    # 15th test:
+    big_list = []
+    for k in range(888, 1888):
+        big_list.append(k)
+    tests.append(st.SimpleTestCase(practice_problem3,
+                                   [888, 1000,
+                                    - math.sqrt(2) - 0.00000000001],
+                                   big_list))
+
+    # 16th test:
+    big_list = []
+    for k in range(888, 1888):
+        big_list.append(k)
+    tests.append(st.SimpleTestCase(practice_problem3,
+                                   [888, 1000,
+                                    - math.sqrt(2) - 0.00000000001],
+                                   big_list))
+
     ###########################################################################
     # TO DO 2 continued:  More tests:
     #      YOU add at least **   2   ** additional tests here.
@@ -208,6 +226,9 @@ def practice_problem3(start, n, threshold):
       :type n:     int
       :type threshold: float
     """
+
+
+
     ###########################################################################
     # TODO: 3. Implement and test this function.
     #          Some tests are already written for you (above),
