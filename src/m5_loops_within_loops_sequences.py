@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Alyssa Taylor.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -39,7 +39,7 @@ def main():
 def run_test_integers():
     """ Tests the    integers    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  integers  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -72,6 +72,32 @@ def run_test_integers():
     print('Expected is:', expected)
     print('Actual is:  ', answer)
 
+    # Test 2:
+    expected = [2, 1, 1, 1, 1, 3, 60, -9]
+    answer = integers([(2, 1),
+                       (1, 'hi', 1),
+                       [1, 2.5, 3],
+                       'hello',
+                       [],
+                       ['oops'],
+                       [[55], [44]],
+                       [60, -9]
+                       ])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
+
+    # Test 3:
+    expected = [1, 2, 3, 4, 5]
+    answer = integers([(1, 5.8),
+                       (2, 'hi', 'NO'),
+                       [3, 2.5, 4, 5],
+                       'hello',
+                       [],
+                       ['oops'],
+                       [[55], [44]]])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
+
 
 def integers(sequence_of_sequences):
     """
@@ -95,8 +121,17 @@ def integers(sequence_of_sequences):
       :type sequence_of_sequences: (list|tuple) of (list|tuple|string)
       :rtype: list of int
     """
+
+    a = []
+    for j in range(len(sequence_of_sequences)):
+        seq = sequence_of_sequences[j]
+        for k in range(len(seq)):
+            if type(seq[k]) is int:
+                a = a + [seq[k]]
+    return a
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     ###########################################################################
@@ -189,6 +224,18 @@ def big_letters(sequence_of_sequences):
 
     Precondition:  the given argument is a sequence of sequences.
     """
+
+    pickle = ''
+    for j in range(len(sequence_of_sequences)):
+        seq = sequence_of_sequences[j]
+        for k in range(len(seq)):
+            if type(seq[k]) is str:
+                if seq[k].isupper():
+                    pickle = pickle + seq[k]
+    return pickle
+
+    #IT IS PRINTING AN EXTRA 'OOPS'
+
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).

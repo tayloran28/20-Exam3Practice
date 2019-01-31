@@ -46,7 +46,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ###########################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -226,7 +226,12 @@ def practice_problem3(start, n, threshold):
       :type n:     int
       :type threshold: float
     """
-
+    count = 0
+    for j in range(start):
+        for k in range(n):
+            if math.sin(j)+math.cos(j) >= threshold:
+                count = count + 1
+            return count
 
 
     ###########################################################################
