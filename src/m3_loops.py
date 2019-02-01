@@ -226,12 +226,12 @@ def practice_problem3(start, n, threshold):
       :type n:     int
       :type threshold: float
     """
-    count = 0
-    for j in range(start):
-        for k in range(n):
-            if math.sin(j)+math.cos(j) >= threshold:
-                count = count + 1
-            return count
+
+    list = []
+    for k in range(start):
+        if (math.sin(k) + math.cos(k)) >= threshold:
+            list = list + [k]
+    return list
 
 
     ###########################################################################

@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Alyssa Taylor.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -89,6 +89,26 @@ def hourglass(window, n, point, radius, color):
     where n and radius are positive and color is a string that denotes
     a color that rosegraphics understands.
     """
+
+    xo = point.x
+    yo = point.y
+
+    x = point.x
+    y = point.y
+
+    new_line = x - radius
+
+    for j in range(n-1, -1, -1):
+        for k in range(n-j):
+            circle1 = rg.Circle(rg.Point(x, y), radius)
+            circle1.fill_color = color
+            circle1.attach_to(window)
+            window.render(0.1)
+            x = x + 2*radius
+        y = y - (2*radius)
+        x = new_line
+
+
     # -------------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
     #       We provided some tests for you (above).
@@ -163,6 +183,10 @@ def many_hourglasses(window, square, m, colors):
     where m is positive and colors is a sequence of strings,
     each of which denotes a color that rosegraphics understands.
     """
+
+    for j in range(m):
+        square = rg.Square()
+
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #       We provided some tests for you (above).

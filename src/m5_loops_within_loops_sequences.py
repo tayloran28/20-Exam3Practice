@@ -230,14 +230,12 @@ def big_letters(sequence_of_sequences):
         seq = sequence_of_sequences[j]
         for k in range(len(seq)):
             if type(seq[k]) is str:
-                if seq[k].isupper():
+                if seq[k].isupper()& len(seq[k]) == 1:
                     pickle = pickle + seq[k]
     return pickle
 
-    #IT IS PRINTING AN EXTRA 'OOPS'
-
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     ###########################################################################
